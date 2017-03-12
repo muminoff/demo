@@ -1,0 +1,58 @@
+---
+- hosts: api
+  gather_facts: yes
+  remote_user: ec2-user
+  sudo: yes
+  tasks:
+
+#     - name: gitni ornatish
+#       yum: name="git" state=latest
+
+#     - name: wgetni ornatish
+#       yum: name="wget" state=latest
+
+#     - name: get os distro
+#       shell: cat /etc/*release
+#       register: cat
+#     - debug: var=cat.stdout_lines
+
+#     - name: Upgrade all packages
+#       yum: name=* state=latest
+
+#     - name: Groupinstall development tools
+#       yum: name="@Development tools" state=present
+
+#     - name: copy node.js binary
+#       shell: cd /usr/local/src && wget https://nodejs.org/dist/v6.10.0/node-v6.10.0-linux-x64.tar.xz
+
+#     - name: install node.js (link)
+#       shell: cd /usr/local/src && tar xvf node-v6.10.0-linux-x64.tar.xz
+
+#     - name: make node symlink
+#       shell: cd /usr/local/src && ln -s /usr/local/src/node-v6.10.0-linux-x64/bin/node /usr/local/bin/node
+
+#     - name: make npm symlink
+#       shell: cd /usr/local/src && ln -s /usr/local/src/node-v6.10.0-linux-x64/bin/npm /usr/local/bin/npm
+
+#     - name: get node version
+#       shell: /usr/local/bin/node --version
+#       register: cat
+#     - debug: var=cat.stdout_lines
+
+    # - name: copy project
+    #   shell: cd /home/ec2-user/ && wget https://github.com/muminoff/demo/archive/master.zip
+
+    - name: unzip project
+      shell: cd /home/ec2-user/ && unzip -x master.zip
+
+#     - name: install project requirements
+#       shell: cd /home/ec2-user/demo-master && npm install
+
+# - hosts: www
+#   gather_facts: yes
+#   remote_user: ec2-user
+#   sudo: yes
+#   tasks:
+
+#     - name: install nginx
+#       yum: name="nginx" state=present
